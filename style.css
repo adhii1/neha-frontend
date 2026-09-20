@@ -15,8 +15,10 @@
   --color-border: #D8E5F3;
   --color-hover: #EEF6FF;
 
-  --font-headings: 'Clash Display', 'General Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-headings: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+/* Hide subtitles for portfolio cards */
+.gallery-subtitle { display: none; }
 
   --sidebar-width: 280px;
   --header-height-mobile: 70px;
@@ -368,16 +370,14 @@ li {
    ========================================================================== */
 .hero-section {
   width: 100%;
-  height: 200vh; /* Accommodate ScrollTrigger Pin */
+  height: 100vh;
   position: relative;
 }
 
 .hero-pinned-container {
   width: 100%;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
+  height: 100%;
+  position: relative;
   overflow: hidden;
 }
 
@@ -391,7 +391,7 @@ li {
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   z-index: 1;
 }

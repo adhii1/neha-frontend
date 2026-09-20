@@ -39,30 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ----------------------------------------------------
-     2. Dynamic Hero Section Scroll Transition (GSAP)
+     2. Automatic 3-Image Hero Background Rotation & Loop
      ---------------------------------------------------- */
-  // Pin the entire hero section while executing the background crossfade
-  const heroTL = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#home',
-      start: 'top top',
-      end: '+=100%', // Scroll depth equal to 100vh
-      scrub: true,
-      pin: '.hero-pinned-container',
-      pinSpacing: false, // Do not leave space after unpinning
-    }
-  });
+  const heroLayers = document.querySelectorAll('.hero-bg-layer');
+  let currentHeroIdx = 0;
 
-  // Animate Background layer transition: Exterior (1 -> 0) & Interior (0 -> 1)
-  heroTL.to('.hero-bg-layer.exterior', { opacity: 0, duration: 1 }, 0);
-  heroTL.to('.hero-bg-layer.interior', { opacity: 1, duration: 1 }, 0);
-
-  // Text transitions in the hero section
-  heroTL.to(['#hero-headline-1', '#hero-desc-1'], { opacity: 0, scale: 0.98, duration: 0.4 }, 0);
-
-  heroTL.set(['#hero-headline-2', '#hero-desc-2'], { display: 'block' }, 0.4);
-  heroTL.to(['#hero-headline-2', '#hero-desc-2'], { opacity: 1, scale: 1, duration: 0.6 }, 0.4);
-  heroTL.to(['#hero-headline-1', '#hero-desc-1'], { display: 'none' }, 0.4);
+  if (heroLayers.length > 1) {
+    setInterval(() => {
+      heroLayers[currentHeroIdx].classList.remove('active-layer');
+      currentHeroIdx = (currentHeroIdx + 1) % heroLayers.length;
+      heroLayers[currentHeroIdx].classList.add('active-layer');
+    }, 4000);
+  }
 
 
   /* ----------------------------------------------------
@@ -447,6 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
      13. Project Portfolio Data & Multi-Image Gallery Lightbox
      ---------------------------------------------------- */
   const portfolioProjects = {
+    // Retail Projects
     'mayuri-bar': {
       title: 'Mayuri Bar & Restaurant',
       badge: 'RETAIL',
@@ -454,9 +443,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'assets/images/neha/retail mayuri (1).jpeg', caption: 'Mayuri Bar & Restaurant - Architectural Entrance & LED Illumination' },
         { src: 'assets/images/neha/retail mayuri (2).jpeg', caption: 'Mayuri Restaurant - Ambient Dining Area Ceiling Lighting' },
         { src: 'assets/images/the_mayuri.png', caption: 'Mayuri - Custom Architectural Brand Signage' },
-        { src: 'assets/images/neha/mayuri 3.jpeg', caption: 'Mayuri - Custom Architectural Brand Signage' },
-        { src: 'assets/images/neha/mayuri 4.jpeg', caption: 'Mayuri - Custom Architectural Brand Signage' },
-
+        { src: 'assets/images/neha/mayuri 3.jpeg', caption: 'Mayuri - Interior Lounge Lighting' },
+        { src: 'assets/images/neha/mayuri 4.jpeg', caption: 'Mayuri - Main Entrance Feature' }
       ]
     },
     'more-hypermarket-1': {
@@ -467,7 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'assets/images/neha/retail more  (2).JPG', caption: 'Hypermarket More - Retail Floor Power Distribution' },
         { src: 'assets/images/neha/more 3.JPG', caption: 'Hypermarket More - Main Distribution Panel Wiring' },
         { src: 'assets/images/neha/more 4.JPG', caption: 'Hypermarket More - Commercial Cable Tray Network' },
-        { src: 'assets/images/neha/more 5.JPG', caption: 'Hypermarket More - Checkout Area Lighting & Power Grid' }
+        { src: 'assets/images/neha/more 5.JPG', caption: 'Hypermarket More - Checkout Area Lighting & Power Concept' }
       ]
     },
     'van-heusen': {
@@ -492,14 +480,13 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'assets/images/neha/lp 4.jpg', caption: 'Aditya Birla Fashion - Corporate Retail Identity' }
       ]
     },
-
     'nandhini-deluxe': {
       title: 'Nandhini Deluxe',
       badge: 'RETAIL',
       images: [
         { src: 'assets/images/neha/retail nandini/WhatsApp Image 2025-12-25 at 5.48.56 PM.jpeg', caption: 'Nandhini Deluxe - Precision Ceiling Track Spotlighting' },
         { src: 'assets/images/neha/retail nandini/WhatsApp Image 2025-12-25 at 5.49.07 PM.jpeg', caption: 'Nandhini Deluxe - Acoustic Paneling & Accent Lighting' },
-        { src: 'assets/images/neha/retail nandini/WhatsApp Image 2025-12-25 at 5.49.08 PM.jpeg', caption: 'Nandhini Deluxe - Dining Hall Atmospheric Lighting Grid' },
+        { src: 'assets/images/neha/retail nandini/WhatsApp Image 2025-12-25 at 5.49.08 PM.jpeg', caption: 'Nandhini Deluxe - Dining Hall Atmospheric Lighting Concept' },
         { src: 'assets/images/neha/retail nandini/WhatsApp Image 2025-12-25 at 5.49.16 PM.jpeg', caption: 'Nandhini Deluxe - Main Reception & Cash Counter Wiring' },
         { src: 'assets/images/neha/retail nandini/WhatsApp Image 2025-09-06 at 5.21.06 PM.jpeg', caption: 'Nandhini Deluxe - Exterior Facade Architectural Illumination' }
       ]
@@ -508,12 +495,13 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Tata Power Solar',
       badge: 'SOLAR & POWER',
       images: [
-        { src: 'assets/images/neha/tata power.png', caption: 'Tata Power Solar - Commercial Solar Grid Integration' },
+        { src: 'assets/images/neha/tata power.png', caption: 'Tata Power Solar - Commercial Solar Concept Integration' },
         { src: 'assets/images/neha/tata bp office (1).jpg', caption: 'Tata BP Solar Office - Facility Electrical Layout' },
-        { src: 'assets/images/neha/tata bp office (2).jpg', caption: 'Tata BP Solar Office - Grid Distribution & Inverters' },
-
+        { src: 'assets/images/neha/tata bp office (2).jpg', caption: 'Tata BP Solar Office - Concept Distribution & Inverters' }
       ]
     },
+
+    // Corporate Projects
     'elbit-india': {
       title: 'Elbit India',
       badge: 'CORPORATE INFRASTRUCTURE',
@@ -536,17 +524,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'assets/images/neha/ather 5.JPG', caption: 'Ather Energy - Collaboration Zone Architectural Lighting' }
       ]
     },
-    'ather-center': {
-      title: 'Ather Center',
-      badge: 'CORPORATE SHOWROOM',
-      images: [
-        { src: 'assets/images/neha/corporate arther (2).JPG', caption: 'Ather Experience Center - Architectural Interior Lighting' },
-        { src: 'assets/images/neha/corporate arther (1).JPG', caption: 'Ather Experience Center - Customer Lounge & Display Power' },
-        { src: 'assets/images/neha/corporate arther.JPG', caption: 'Ather Experience Center - EV Showcase Track Lighting' },
-        { src: 'assets/images/neha/oi2.jpg', caption: 'Ather Experience Center - Interactive Wall Power Installation' },
-        { src: 'assets/images/neha/oi3.JPG', caption: 'Ather Experience Center - Fast Charging Power Station Grid' }
-      ]
-    },
     'cassadian': {
       title: 'Cassadian',
       badge: 'CORPORATE SHOWROOM',
@@ -563,11 +540,10 @@ document.addEventListener('DOMContentLoaded', () => {
       badge: 'COMMERCIAL LOGISTICS',
       images: [
         { src: 'assets/images/neha/big bags.jpg', caption: 'Big Bags India - High-Bay LED Warehouse Illumination' },
-        { src: 'assets/images/neha/big bags 1 (1).jpg', caption: 'Big Bags India - Logistics Facility Cable Tray Routing' },
-        { src: 'assets/images/neha/big bags 1 (2).jpg', caption: 'Big Bags India - Operations Floor Electrical Wiring' },
-        { src: 'assets/images/neha/big bags 1 (3).jpg', caption: 'Big Bags India - Central Main Switchgear Panel' },
-        { src: 'assets/images/neha/big bags 1 (4).jpg', caption: 'Big Bags India - Commercial Facility Identification' },
-        { src: 'assets/images/neha/big bags 1 (5).jpg', caption: 'Big Bags India - Commercial Facility Identification' }
+        { src: 'assets/images/neha/corporate big bags  (1).jpg', caption: 'Big Bags India - Logistics Facility Cable Tray Routing' },
+        { src: 'assets/images/neha/big bags 1 (1).jpg', caption: 'Big Bags India - Operations Floor Electrical Wiring' },
+        { src: 'assets/images/neha/big bags 1 (2).jpg', caption: 'Big Bags India - Central Main Switchgear Panel' },
+        { src: 'assets/images/neha/big bags 1 (3).jpg', caption: 'Big Bags India - Commercial Facility Identification' }
       ]
     },
     'kivar': {
@@ -575,72 +551,146 @@ document.addEventListener('DOMContentLoaded', () => {
       badge: 'CORPORATE BUILDING',
       images: [
         { src: 'assets/images/neha/corporate kevar (2).JPG', caption: 'Kivar Commercial Complex - Turnkey Electrical Contracting' },
-        { src: 'assets/images/neha/corporate kevar (1).JPG', caption: 'Kivar Complex - Interior Lighting Grids & Riser Cables' },
+        { src: 'assets/images/neha/corporate kevar (1).JPG', caption: 'Kivar Complex - Interior Lighting Concepts & Riser Cables' },
         { src: 'assets/images/neha/kivar 1 (1).JPG', caption: 'Kivar - Commercial Complex Exterior Elevation' },
         { src: 'assets/images/neha/kivar 1 (2).JPG', caption: 'Kivar - Corporate Brand Profile' },
         { src: 'assets/images/neha/kivar 1 (3).JPG', caption: 'Kivar - Commercial Lobby & Corridor Lighting' }
       ]
     },
-
     'vodafone-reception': {
       title: 'Vodafone Idea Reception',
       badge: 'CORPORATE LOBBY',
       images: [
         { src: 'assets/images/neha/corporate vodaphone (3).jpg', caption: 'Vodafone Idea Reception - Architectural Ceiling Cove Lighting' },
-        { src: 'assets/images/neha/corporate vodaphone (1).jpg', caption: 'Vodafone Idea Reception - Office Floor Connector Grid' },
+        { src: 'assets/images/neha/corporate vodaphone (1).jpg', caption: 'Vodafone Idea Reception - Office Floor Connector Concept' },
         { src: 'assets/images/neha/corporate vodaphone (2).jpg', caption: 'Vodafone Idea Reception - Conference Lounge Lighting' },
         { src: 'assets/images/neha/corporate vodaphone (4).jpg', caption: 'Vodafone Idea Reception - Automated Lighting Controls' },
         { src: 'assets/images/neha/corporate vodaphone (5).jpg', caption: 'Vodafone Idea Reception - 24/7 Security Power System' }
       ]
     },
 
-    'prestige-tower': {
-      title: 'Residential Tower',
-      badge: 'RESIDENTIAL TOWER',
-      images: [
-        { src: 'assets/images/neha/suma 1 (5).jpg', caption: 'Prestige Group Residential Tower - Facade Architectural Lighting' },
-        { src: 'assets/images/neha/suma 1 (4).jpg', caption: 'Prestige Group Residential Tower - Grand Entrance Lobby' },
-        { src: 'assets/images/neha/suma.jpg', caption: 'Prestige Group Residential Tower - Apartment Interiors' },
-        { src: 'assets/images/neha/suma 1 (3).jpg', caption: 'Prestige Group Residential Tower - Apartment Interiors' },
-        { src: 'assets/images/neha/suma 1 (2).jpg', caption: 'Prestige Group Residential Tower - Penthouse Skydeck' },
-        { src: 'assets/images/suma 1 (1).jpg', caption: 'Prestige Group - Residential Developer Identity' }
-      ]
-    },
+    // Residential Projects (1 project card per set -> 4-5 images per set)
     'prestige-grand': {
       title: 'Prestige Grand',
       badge: 'GRAND LOBBY',
       images: [
         { src: 'assets/images/neha/residential prestige (2).JPG', caption: 'Prestige Grand Lobby - High-End Interior Cove Lighting & Chandeliers' },
-        { src: 'assets/images/neha/residential prestige (1).jpg', caption: 'Prestige Grand - High-Voltage Transformer Substation' },
+        { src: 'assets/images/neha/residential prestige (1).jpg', caption: 'Prestige Grand - High-Voltage Substation Infrastructure' },
         { src: 'assets/images/neha/residential prestige (3).JPG', caption: 'Prestige Grand - Luxury Living Room Illumination' },
-        { src: 'assets/images/neha/residential prestige (4).JPG', caption: 'Prestige Grand - Smart Building Lighting Controls' },
+        { src: 'assets/images/neha/residential prestige (4).JPG', caption: 'Prestige Grand - Smart Home Lighting Controls' },
         { src: 'assets/images/neha/resi  light&a 5.jpg', caption: 'Prestige Grand - Ambient Wall Sconces & Accents' }
       ]
     },
-    'prestige-living': {
-      title: 'Luxury Living Space',
+    'kbn': {
+      title: 'KBN Residence',
+      badge: 'RESIDENTIAL',
+      images: [
+        { src: 'assets/images/neha/resi fn (1).jpg', caption: 'KBN Residence - Facade Illumination & Main Entrance' },
+        { src: 'assets/images/neha/resi fn (2).jpg', caption: 'KBN Residence - Custom Architectural LED Ceiling Profiles' },
+        { src: 'assets/images/neha/resi fn (3).jpg', caption: 'KBN Residence - Living Room Ambient Mood Lighting' },
+        { src: 'assets/images/neha/resi kn  (1).jpg', caption: 'KBN Residence - Modern Bedroom Accent Lighting' },
+        { src: 'assets/images/neha/resi kn  (2).jpg', caption: 'KBN Residence - Foyer & Entryway Architectural Detail' }
+      ]
+    },
+    'hoskote': {
+      title: 'Hoskote Villa',
+      badge: 'RESIDENTIAL ESTATE',
+      images: [
+        { src: 'assets/images/neha/hoskote (1).jpg', caption: 'Hoskote Villa - Custom Architectural Recessed LED Lighting' },
+        { src: 'assets/images/neha/hoskote (2).jpg', caption: 'Hoskote Villa - Interior Ambient Dining & Living Illumination' },
+        { src: 'assets/images/neha/hoskote (3).jpg', caption: 'Hoskote Villa - Exterior Facade Architectural Lighting' },
+        { src: 'assets/images/neha/hoskote (4).jpg', caption: 'Hoskote Villa - Foyer & Entryway Lighting Concept' },
+        { src: 'assets/images/neha/hoskote (5).jpg', caption: 'Hoskote Villa - Master Suite Mood Scene Control' }
+      ]
+    },
+    'bohra': {
+      title: 'Bohra Residence',
       badge: 'RESIDENTIAL INTERIORS',
       images: [
-        { src: 'assets/images/neha/githa 5.jpg', caption: 'Luxury Living Space - Custom Architectural Recessed LED Lighting' },
-        { src: 'assets/images/neha/githa 1 (1).jpg', caption: 'Luxury Living Space - Tower Exterior Profile' },
-        { src: 'assets/images/neha/githa 1 (2).jpg', caption: 'Luxury Living Space - Foyer & Concierge Illumination' },
-        { src: 'assets/images/neha/githa 1 (3).jpg', caption: 'Luxury Living Space - Master Suite Mood Scenes' },
-        { src: 'assets/images/neha/githa 1.jpg', caption: 'Luxury Living Space - Smart Dimmer Automation Controls' }
+        { src: 'assets/images/neha/bohra.jpg', caption: 'Bohra Residence - Luxury Living Room Illumination' },
+        { src: 'assets/images/neha/bohra (1).jpg', caption: 'Bohra Residence - Modern Architectural Ceiling Cove' },
+        { src: 'assets/images/neha/bohra (2).jpg', caption: 'Bohra Residence - Dining Area Ambient Pendant & Track Lighting' },
+        { src: 'assets/images/neha/bohra (3).jpg', caption: 'Bohra Residence - Master Suite Mood Lighting Setup' },
+        { src: 'assets/images/neha/bohra (4).jpg', caption: 'Bohra Residence - Kitchen & Utility Power Distribution' }
       ]
     },
-    'prestige-penthouse': {
-      title: 'Penthouse Suite',
-      badge: 'PENTHOUSE SUITE',
+    'bohora': {
+      title: 'Bohra Residence',
+      badge: 'RESIDENTIAL INTERIORS',
       images: [
-        { src: 'assets/images/neha/sashi (5).jpg', caption: 'Penthouse Suite - Intelligent Lighting Automation & Mood Scenes' },
-        { src: 'assets/images/neha/sashi (4).jpg', caption: 'Penthouse Suite - Sky Villa Elevation Lighting' },
-        { src: 'assets/images/neha/sashi (3).jpg', caption: 'Penthouse Suite - Private Elevator Lobby Illumination' },
-        { src: 'assets/images/neha/sashi (2).jpg', caption: 'Penthouse Suite - Premium Electrical Fittings' },
-        { src: 'assets/images/neha/sashi (1).jpg', caption: 'Penthouse Suite - Terrace Architectural Uplighters' }
+        { src: 'assets/images/neha/bohra.jpg', caption: 'Bohra Residence - Luxury Living Room Illumination' },
+        { src: 'assets/images/neha/bohra (1).jpg', caption: 'Bohra Residence - Modern Architectural Ceiling Cove' },
+        { src: 'assets/images/neha/bohra (2).jpg', caption: 'Bohra Residence - Dining Area Ambient Pendant & Track Lighting' },
+        { src: 'assets/images/neha/bohra (3).jpg', caption: 'Bohra Residence - Master Suite Mood Lighting Setup' },
+        { src: 'assets/images/neha/bohra (4).jpg', caption: 'Bohra Residence - Kitchen & Utility Power Distribution' }
       ]
     },
-
+    'residential-new': {
+      title: 'Residential Villa New',
+      badge: 'MODERN RESIDENTIAL',
+      images: [
+        { src: 'assets/images/neha/residential new 1 (1).jpg', caption: 'Residential Villa New - Architectural Facade & Outdoor Uplighters' },
+        { src: 'assets/images/neha/residential new 1 (2).jpg', caption: 'Residential Villa New - Open-Concept Living Ceiling Lighting' },
+        { src: 'assets/images/neha/residential new 1 (3).jpg', caption: 'Residential Villa New - Modular Bedroom Lighting Controls' },
+        { src: 'assets/images/neha/li&a -resi (1).jpg', caption: 'Residential Villa New - High-End Foyer Chandelier & Cove Detail' },
+        { src: 'assets/images/neha/li&a -resi (2).jpg', caption: 'Residential Villa New - Smart Home Panel & Switchgear Installation' }
+      ]
+    },
+    'geetha-home': {
+      title: 'Geetha Home',
+      badge: 'RESIDENTIAL INTERIORS',
+      images: [
+        { src: 'assets/images/neha/githa 1.jpg', caption: 'Geetha Home - Custom Architectural Recessed LED Lighting' },
+        { src: 'assets/images/neha/githa 5.jpg', caption: 'Geetha Home - Interior Ambient Illumination' },
+        { src: 'assets/images/neha/githa 1 (1).jpg', caption: 'Geetha Home - Exterior Residence Elevation' },
+        { src: 'assets/images/neha/githa 1 (2).jpg', caption: 'Geetha Home - Foyer & Entryway Lighting' },
+        { src: 'assets/images/neha/githa 1 (3).jpg', caption: 'Geetha Home - Master Suite Mood Scenes' }
+      ]
+    },
+    'sashi-residence': {
+      title: 'Sashi Residence',
+      badge: 'RESIDENTIAL',
+      images: [
+        { src: 'assets/images/neha/sashi.jpg', caption: 'Sashi Residence - Luxury Home Automation & Lighting' },
+        { src: 'assets/images/neha/sashi  (1).jpg', caption: 'Sashi Residence - Terrace Architectural Uplighters' },
+        { src: 'assets/images/neha/sashi  (2).jpg', caption: 'Sashi Residence - Premium Electrical Fittings' },
+        { src: 'assets/images/neha/sashi  (3).jpg', caption: 'Sashi Residence - Private Foyer & Lobby Illumination' },
+        { src: 'assets/images/neha/sashi  (4).jpg', caption: 'Sashi Residence - Sky Villa Elevation Lighting' },
+        { src: 'assets/images/neha/sashi  (5).jpg', caption: 'Sashi Residence - Intelligent Lighting Automation & Mood Scenes' }
+      ]
+    },
+    'suma-residence': {
+      title: 'Suma Residence',
+      badge: 'RESIDENTIAL TOWER',
+      images: [
+        { src: 'assets/images/neha/suma.jpg', caption: 'Suma Residence - Apartment Interiors' },
+        { src: 'assets/images/neha/suma 1 (1).jpg', caption: 'Suma Residence - Residential Developer Identity' },
+        { src: 'assets/images/neha/suma 1 (2).jpg', caption: 'Suma Residence - Penthouse Skydeck' },
+        { src: 'assets/images/neha/suma 1 (3).jpg', caption: 'Suma Residence - Apartment Interiors & Lighting' },
+        { src: 'assets/images/neha/suma 1 (4).jpg', caption: 'Suma Residence - Grand Entrance Lobby' },
+        { src: 'assets/images/neha/suma 1 (5).jpg', caption: 'Suma Residence - Facade Architectural Lighting' }
+      ]
+    }
   };
+
+  // Fetch Projects Data from API
+  async function loadProjectsFromAPI() {
+    try {
+      const apiUrl = 'http://localhost:3000/api/projects';
+      const res = await fetch(apiUrl);
+      if (res.ok) {
+        const json = await res.json();
+        if (json.success && json.data) {
+          Object.assign(portfolioProjects, json.data);
+          console.log('[API] Portfolio projects successfully synchronized from API.');
+        }
+      }
+    } catch (err) {
+      console.log('[API] Using local portfolio projects dataset fallback.');
+    }
+  }
+  loadProjectsFromAPI();
+
 
   // Lightbox DOM elements
   const lightboxModal = document.getElementById('image-lightbox');

@@ -16,18 +16,19 @@
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Neha Electricals | Premium Commercial Electrical Solutions">
   <meta property="og:description"
-    content="Elegance meets modern engineering. Discover commercial electrical contracting, automation, and interior lighting services since 2000.">
+    content="Elegance meets modern engineering. Discover commercial electrical contracting, automation, and interior lighting services since 1995.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/assets/images/hero_exterior.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/jpg" href="assets/images/neha_logo.jpg">
 
-  <!-- Fonts: Clash Display, General Sans, and Inter -->
+  <!-- Fonts: Outfit (Headings) & Plus Jakarta Sans (Body & UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://api.fontshare.com/v2/css?f[]=clash-display@300,400,500,600,700&f[]=general-sans@300,400,500,600,700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- FontAwesome (v6) for outline icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -79,7 +80,7 @@
           <span class="since-txt">SINCE</span>
           <span class="since-line"></span>
         </div>
-        <span class="since-year">2000</span>
+        <span class="since-year">1995</span>
       </div>
     </aside>
 
@@ -102,10 +103,11 @@
       <!-- HERO SECTION -->
       <section id="home" class="hero-section">
         <div class="hero-pinned-container">
-          <!-- Background layers for dynamic transition -->
-          <div class="hero-bg-layer exterior active-layer"
-            style="background-image: url('assets/images/hero_exterior.png');"></div>
-          <div class="hero-bg-layer interior" style="background-image: url('assets/images/hero_interior.png');"></div>
+          <!-- Background layers for continuous dynamic 3-image transition -->
+          <div class="hero-bg-layer active-layer" style="background-image: url('assets/images/hero_exterior.png');">
+          </div>
+          <div class="hero-bg-layer" style="background-image: url('assets/images/hero_interior.png');"></div>
+          <div class="hero-bg-layer" style="background-image: url('assets/images/finished_building.png');"></div>
           <div class="hero-overlay"></div>
 
           <!-- Get in Touch Top Right Button -->
@@ -115,7 +117,7 @@
           </div>
 
           <div class="hero-content">
-            <span class="hero-tag animate-reveal">SINCE 2000 —</span>
+            <span class="hero-tag animate-reveal">SINCE 1997 —</span>
 
             <div class="hero-headline-container">
               <h1 class="hero-headline animate-reveal active-text" id="hero-headline-1">
@@ -165,7 +167,7 @@
         <div class="container">
           <div class="section-header">
             <span class="section-tag">OUR HERITAGE</span>
-            <h2 class="section-title">Established in 2000. Engineered for Excellence.</h2>
+            <h2 class="section-title">Established in 1997. Engineered for Excellence.</h2>
           </div>
           <div class="about-grid">
             <div class="about-text-col">
@@ -180,7 +182,7 @@
               </p>
               <div class="signature-block">
                 <span class="founder-name">Neha Electricals Leadership Team</span>
-                <span class="founder-title">Engineered to Inspire Since 2000</span>
+                <span class="founder-title">Engineered to Inspire Since 1997</span>
               </div>
             </div>
             <div class="about-visual-col">
@@ -232,7 +234,7 @@
                   <i class="fa-solid fa-bolt"></i>
                 </div>
                 <h3 class="service-name">ELECTRICAL CONTRACTING</h3>
-                <p class="service-desc">Safe. Smart. Seamless heavy-duty wiring & power grid setup.</p>
+                <p class="service-desc">Safe. Smart. Seamless heavy-duty wiring & power concept setup.</p>
               </div>
             </div>
 
@@ -307,7 +309,7 @@
                   <i class="fa-solid fa-solar-panel"></i>
                 </div>
                 <h3 class="service-name">SOLAR & MAINTENANCE</h3>
-                <p class="service-desc">Clean energy solar grids & 24/7 AMC electrical maintenance.</p>
+                <p class="service-desc">Clean energy solar concepts & 24/7 AMC electrical maintenance.</p>
               </div>
             </div>
           </div>
@@ -409,14 +411,14 @@
             </div>
             <h2 class="section-title">Visual Showcase & Project Gallery</h2>
             <p class="section-subtitle">Explore our authentic corporate installations, modern office interiors, smart
-              lighting grids, and commercial developments.</p>
+              lighting concepts, and commercial developments.</p>
           </div>
 
           <!-- Gallery Filter Buttons -->
           <div class="gallery-filter-bar animate-reveal">
             <button class="filter-btn active" data-filter="all">ALL PROJECTS</button>
-            <button class="filter-btn" data-filter="retail">RETAIL</button>
             <button class="filter-btn" data-filter="corporate">CORPORATE</button>
+            <button class="filter-btn" data-filter="retail">RETAIL</button>
             <button class="filter-btn" data-filter="residential">RESIDENTIAL</button>
           </div>
 
@@ -424,104 +426,9 @@
           <!-- Grid Container -->
           <div class="gallery-masonry-grid" id="gallery-grid">
 
-            <!-- Item 1: Mayuri Retail Store Front -->
-            <div class="gallery-item" data-category="retail">
-              <div class="gallery-card" data-project="mayuri-bar"
-                data-lightbox="assets/images/neha/retail mayuri (1).jpeg" data-caption="Mayuri Retail Store Front">
-                <img src="assets/images/neha/retail mayuri (1).jpeg" alt="Mayuri Retail Store Front" loading="lazy">
-                <div class="gallery-card-overlay">
-                  <span class="gallery-badge">RETAIL</span>
-                  <h4 class="gallery-title">Mayuri Bar & Restaurant</h4>
-                  <p class="gallery-subtitle">Custom architectural entryway with warm LED feature lighting and retail
-                    display layout.</p>
-                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
-                </div>
-              </div>
-            </div>
+            <!-- ================= CORPORATE PROJECTS ================= -->
 
-            <!-- Item 2: More Supermarket Commercial Lighting -->
-            <div class="gallery-item" data-category="retail">
-              <div class="gallery-card" data-project="more-hypermarket-1"
-                data-lightbox="assets/images/neha/retail more  (1).JPG"
-                data-caption="More Supermarket Commercial Lighting">
-                <img src="assets/images/neha/retail more  (1).JPG" alt="More Supermarket Commercial Lighting"
-                  loading="lazy">
-                <div class="gallery-card-overlay">
-                  <span class="gallery-badge">RETAIL</span>
-                  <h4 class="gallery-title">Hypermarket More</h4>
-                  <p class="gallery-subtitle">High-efficiency overhead aisle illumination and main distribution wiring.
-                  </p>
-                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item 3: Van Heusen Women Retail Outlet -->
-            <div class="gallery-item" data-category="retail">
-              <div class="gallery-card" data-project="van-heusen"
-                data-lightbox="assets/images/neha/retail van huesen women (4).jpg"
-                data-caption="Van Heusen Women Retail Outlet">
-                <img src="assets/images/neha/retail van huesen women (4).jpg" alt="Van Heusen Women Retail Outlet"
-                  loading="lazy">
-                <div class="gallery-card-overlay">
-                  <span class="gallery-badge">RETAIL INTERIORS</span>
-                  <h4 class="gallery-title">Van Heusen Women</h4>
-                  <p class="gallery-subtitle">Architectural ceiling cove illumination, accent spotlights, and interior
-                    retail power setup.</p>
-                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item 4: Louis Philippe Retail Outlet -->
-            <div class="gallery-item" data-category="retail">
-              <div class="gallery-card" data-project="louis-philippe"
-                data-lightbox="assets/images/neha/reatil louis phillips (5).jpg" data-caption="louis phillips ">
-                <img src="assets/images/neha/reatil louis phillips (5).jpg" alt="louis phillips" loading="lazy">
-                <div class="gallery-card-overlay">
-                  <span class="gallery-badge">RETAIL INTERIORS</span>
-                  <h4 class="gallery-title">Louis phillips</h4>
-                  <p class="gallery-subtitle">Architectural ceiling cove illumination, accent spotlights, and interior
-                    retail power setup.</p>
-                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
-                </div>
-              </div>
-            </div>
-
-
-
-            <!-- Item 6: Nandhini Deluxe Showroom Interiors -->
-            <div class="gallery-item" data-category="retail">
-              <div class="gallery-card" data-project="nandhini-deluxe"
-                data-lightbox="assets/images/neha/retail nandini/WhatsApp Image 2025-12-25 at 5.48.56 PM.jpeg"
-                data-caption="Mayuri Showroom Interiors">
-                <img src="assets/images/neha/retail nandini/WhatsApp Image 2025-12-25 at 5.48.56 PM.jpeg"
-                  alt="Nandhini deluxe Interiors" loading="lazy" class="img-pos-top">
-                <div class="gallery-card-overlay">
-                  <span class="gallery-badge">RETAIL</span>
-                  <h4 class="gallery-title">Nandhini Deluxe</h4>
-                  <p class="gallery-subtitle">Precision ceiling track spotlighting integrated with acoustic paneling.
-                  </p>
-                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item 7: Tata Power Solar & Electrical Grid -->
-            <div class="gallery-item" data-category="retail corporate">
-              <div class="gallery-card" data-project="tata-power" data-lightbox="assets/images/neha/tata power.png"
-                data-caption="Tata Power Solar & Electrical Grid">
-                <img src="assets/images/neha/tata power.png" alt="Tata Power Solar & Electrical Grid" loading="lazy">
-                <div class="gallery-card-overlay">
-                  <span class="gallery-badge">SOLAR & POWER</span>
-                  <h4 class="gallery-title">Tata Power Solar</h4>
-                  <p class="gallery-subtitle">High-capacity commercial solar grid and sub-station power management.</p>
-                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Item 8: Elbit Systems Corporate Complex -->
+            <!-- Item: Elbit Systems Corporate Complex -->
             <div class="gallery-item" data-category="corporate">
               <div class="gallery-card" data-project="elbit-india" data-lightbox="assets/images/neha/cor elibit.jpg"
                 data-caption="Elbit Systems Corporate Complex">
@@ -537,7 +444,7 @@
               </div>
             </div>
 
-            <!-- Item 9: Ather Energy Corporate Office -->
+            <!-- Item: Ather Energy Corporate Office -->
             <div class="gallery-item" data-category="corporate">
               <div class="gallery-card" data-project="ather-office"
                 data-lightbox="assets/images/neha/corporate arther (1).JPG"
@@ -554,15 +461,11 @@
               </div>
             </div>
 
-
-
-            <!-- Item 11: Cassadian Corporate Facility -->
+            <!-- Item: Cassadian Corporate Facility -->
             <div class="gallery-item" data-category="corporate">
               <div class="gallery-card" data-project="cassadian"
-                data-lightbox="assets/images/neha/corporate cassadian.JPG"
-                data-caption="Ather Energy Experience Center">
-                <img src="assets/images/neha/corporate cassadian.JPG" alt="Ather Energy Experience Center"
-                  loading="lazy">
+                data-lightbox="assets/images/neha/corporate cassadian.JPG" data-caption="Cassadian Corporate Complex">
+                <img src="assets/images/neha/corporate cassadian.JPG" alt="Cassadian Corporate Complex" loading="lazy">
                 <div class="gallery-card-overlay">
                   <span class="gallery-badge">CORPORATE SHOWROOM</span>
                   <h4 class="gallery-title">Cassadian</h4>
@@ -573,7 +476,7 @@
               </div>
             </div>
 
-            <!-- Item 12: Bigbasket Corporate Facility - Zone A -->
+            <!-- Item: Bigbasket Corporate Facility - Zone A -->
             <div class="gallery-item" data-category="corporate">
               <div class="gallery-card" data-project="big-bags-india"
                 data-lightbox="assets/images/neha/corporate big bags  (1).jpg"
@@ -590,11 +493,7 @@
               </div>
             </div>
 
-
-
-
-
-            <!-- Item 16: Kivar Commercial Complex -->
+            <!-- Item: Kivar Commercial Complex -->
             <div class="gallery-item" data-category="corporate">
               <div class="gallery-card" data-project="kivar" data-lightbox="assets/images/neha/corporate kevar (2).JPG"
                 data-caption="Kivar Commercial Complex">
@@ -603,16 +502,14 @@
                 <div class="gallery-card-overlay">
                   <span class="gallery-badge">CORPORATE BUILDING</span>
                   <h4 class="gallery-title">Kivar</h4>
-                  <p class="gallery-subtitle">Turnkey electrical contracting, interior lighting grids, and HVAC power
+                  <p class="gallery-subtitle">Turnkey electrical contracting, interior lighting concepts, and HVAC power
                     infrastructure.</p>
                   <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
                 </div>
               </div>
             </div>
 
-
-
-            <!-- Item 18: Vodafone Idea Regional HQ - Reception -->
+            <!-- Item: Vodafone Idea Regional HQ - Reception -->
             <div class="gallery-item" data-category="corporate">
               <div class="gallery-card" data-project="vodafone-reception"
                 data-lightbox="assets/images/neha/corporate vodaphone (3).jpg"
@@ -628,73 +525,210 @@
               </div>
             </div>
 
-
-
-
-
-            <!-- Item 21: Prestige Group Residential Tower - Exterior -->
-            <div class="gallery-item" data-category="residential">
-              <div class="gallery-card" data-project="Residential hpme" data-lightbox="assets/images/neha/suma.jpg"
-                data-caption="Prestige Group Residential Tower">
-                <img src="assets/images/neha/suma.jpg" alt="Prestige Group Residential Tower" loading="lazy"
-                  class="img-pos-top">
+            <!-- Item: Tata Power Solar & Electrical Concept -->
+            <div class="gallery-item" data-category="corporate retail">
+              <div class="gallery-card" data-project="tata-power" data-lightbox="assets/images/neha/tata power.png"
+                data-caption="Tata Power Solar & Electrical Concept">
+                <img src="assets/images/neha/tata power.png" alt="Tata Power Solar & Electrical Concept" loading="lazy">
                 <div class="gallery-card-overlay">
-                  <span class="gallery-badge">RESIDENTIAL</span>
-                  <h4 class="gallery-title">Residential Tower</h4>
-                  <p class="gallery-subtitle">Facade architectural lighting and high-voltage transformer substation
-                    installation.</p>
+                  <span class="gallery-badge">SOLAR & POWER</span>
+                  <h4 class="gallery-title">Tata Power Solar</h4>
+                  <p class="gallery-subtitle">High-capacity commercial solar concept and sub-station power management.
+                  </p>
                   <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
                 </div>
               </div>
             </div>
 
-            <!-- Item 22: Prestige Group Luxury Apartments - Grand Lobby -->
+            <!-- ================= RETAIL PROJECTS ================= -->
+
+            <!-- Item: Mayuri Retail Store Front -->
+            <div class="gallery-item" data-category="retail">
+              <div class="gallery-card" data-project="mayuri-bar"
+                data-lightbox="assets/images/neha/retail mayuri (1).jpeg" data-caption="Mayuri Retail Store Front">
+                <img src="assets/images/neha/retail mayuri (1).jpeg" alt="Mayuri Retail Store Front" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-badge">RETAIL</span>
+                  <h4 class="gallery-title">Mayuri Bar & Restaurant</h4>
+                  <p class="gallery-subtitle">Custom architectural entryway with warm LED feature lighting and retail
+                    display layout.</p>
+                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item: More Supermarket Commercial Lighting -->
+            <div class="gallery-item" data-category="retail">
+              <div class="gallery-card" data-project="more-hypermarket-1"
+                data-lightbox="assets/images/neha/retail more  (1).JPG"
+                data-caption="More Supermarket Commercial Lighting">
+                <img src="assets/images/neha/retail more  (1).JPG" alt="More Supermarket Commercial Lighting"
+                  loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-badge">RETAIL</span>
+                  <h4 class="gallery-title">Hypermarket More</h4>
+                  <p class="gallery-subtitle">High-efficiency overhead aisle illumination and main distribution wiring.
+                  </p>
+                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item: Van Heusen Women Retail Outlet -->
+            <div class="gallery-item" data-category="retail">
+              <div class="gallery-card" data-project="van-heusen"
+                data-lightbox="assets/images/neha/retail van huesen women (4).jpg"
+                data-caption="Van Heusen Women Retail Outlet">
+                <img src="assets/images/neha/retail van huesen women (4).jpg" alt="Van Heusen Women Retail Outlet"
+                  loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-badge">RETAIL INTERIORS</span>
+                  <h4 class="gallery-title">Van Heusen Women</h4>
+                  <p class="gallery-subtitle">Architectural ceiling cove illumination, accent spotlights, and interior
+                    retail power setup.</p>
+                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item: Louis Philippe Retail Outlet -->
+            <div class="gallery-item" data-category="retail">
+              <div class="gallery-card" data-project="louis-philippe"
+                data-lightbox="assets/images/neha/reatil louis phillips (5).jpg" data-caption="Louis Philippe">
+                <img src="assets/images/neha/reatil louis phillips (5).jpg" alt="Louis Philippe" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-badge">RETAIL INTERIORS</span>
+                  <h4 class="gallery-title">Louis Philippe</h4>
+                  <p class="gallery-subtitle">Architectural ceiling cove illumination, accent spotlights, and interior
+                    retail power setup.</p>
+                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item: Nandhini Deluxe Showroom Interiors -->
+            <div class="gallery-item" data-category="retail">
+              <div class="gallery-card" data-project="nandhini-deluxe"
+                data-lightbox="assets/images/neha/retail nandini/WhatsApp Image 2025-12-25 at 5.48.56 PM.jpeg"
+                data-caption="Nandhini Deluxe Showroom Interiors">
+                <img src="assets/images/neha/retail nandini/WhatsApp Image 2025-12-25 at 5.48.56 PM.jpeg"
+                  alt="Nandhini Deluxe Interiors" loading="lazy" class="img-pos-top">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-badge">RETAIL</span>
+                  <h4 class="gallery-title">Nandhini Deluxe</h4>
+                  <p class="gallery-subtitle">Precision ceiling track spotlighting integrated with acoustic paneling.
+                  </p>
+                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ================= RESIDENTIAL PROJECTS ================= -->
+
+            <!-- Item: Prestige Grand -->
             <div class="gallery-item" data-category="residential">
               <div class="gallery-card" data-project="prestige-grand"
                 data-lightbox="assets/images/neha/residential prestige (2).JPG"
-                data-caption="Prestige Luxury Apartments - Grand Lobby">
-                <img src="assets/images/neha/residential prestige (2).JPG" alt="Prestige Grand Lobby" loading="lazy">
+                data-caption="Prestige Grand">
+                <img src="assets/images/neha/residential prestige (2).JPG" alt="Prestige Grand" loading="lazy">
                 <div class="gallery-card-overlay">
                   <span class="gallery-badge">GRAND LOBBY</span>
-                  <h4 class="gallery-title">Prestige Grand </h4>
-                  <p class="gallery-subtitle">High-end interior cove lighting, ambient chandeliers, and smart building
-                    controls.</p>
+                  <h4 class="gallery-title">Prestige Grand</h4>
                   <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
                 </div>
               </div>
             </div>
 
-            <!-- Item 23: Prestige Group Residential - Living Area -->
+            <!-- Item: KBN Residence -->
             <div class="gallery-item" data-category="residential">
-              <div class="gallery-card" data-project="Residential-living" data-lightbox="assets/images/neha/githa 1.jpg"
-                data-caption="Prestige Residential - Living Area">
-                <img src="assets/images/neha/githa 1.jpg" alt="Prestige Living Area" loading="lazy">
+              <div class="gallery-card" data-project="kbn" data-lightbox="assets/images/neha/resi fn (1).jpg"
+                data-caption="KBN Residence">
+                <img src="assets/images/neha/resi fn (1).jpg" alt="KBN Residence" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-badge">RESIDENTIAL</span>
+                  <h4 class="gallery-title">KBN Residence</h4>
+                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item: Hoskote Villa -->
+            <div class="gallery-item" data-category="residential">
+              <div class="gallery-card" data-project="hoskote" data-lightbox="assets/images/neha/hoskote (1).jpg"
+                data-caption="Hoskote Villa">
+                <img src="assets/images/neha/hoskote (1).jpg" alt="Hoskote Villa" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-badge">RESIDENTIAL ESTATE</span>
+                  <h4 class="gallery-title">Hoskote Villa</h4>
+                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item: Bohra Residence -->
+            <div class="gallery-item" data-category="residential">
+              <div class="gallery-card" data-project="bohra" data-lightbox="assets/images/neha/bohra.jpg"
+                data-caption="Bohra Residence">
+                <img src="assets/images/neha/bohra.jpg" alt="Bohra Residence" loading="lazy">
                 <div class="gallery-card-overlay">
                   <span class="gallery-badge">RESIDENTIAL INTERIORS</span>
-                  <h4 class="gallery-title">Luxury Living Space</h4>
-                  <p class="gallery-subtitle">Custom architectural recessed lighting, LED strip details, and smart
-                    switches.</p>
+                  <h4 class="gallery-title">Bohra Residence</h4>
                   <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
                 </div>
               </div>
             </div>
 
-            <!-- Item 24: Prestige Group Residential - Penthouse Suite -->
-            <div class="gallery-item" data-category="residential house">
-              <div class="gallery-card" data-project="Residential-penthouse"
-                data-lightbox="assets/images/neha/sashi.jpg" data-caption="Prestige Penthouse Suite">
-                <img src="assets/images/neha/sashi.jpg" alt="Prestige Penthouse Suite" loading="lazy">
+            <!-- Item: Residential Villa New -->
+            <div class="gallery-item" data-category="residential">
+              <div class="gallery-card" data-project="residential-new" data-lightbox="assets/images/neha/residential new 1 (1).jpg"
+                data-caption="Residential Villa New">
+                <img src="assets/images/neha/residential new 1 (1).jpg" alt="Residential Villa New" loading="lazy">
                 <div class="gallery-card-overlay">
-                  <span class="gallery-badge">HOUSE SUITE</span>
-                  <h4 class="gallery-title">House Suite</h4>
-                  <p class="gallery-subtitle">Intelligent lighting automation, mood scenes, and premium electrical
-                    fittings.</p>
+                  <span class="gallery-badge">MODERN RESIDENTIAL</span>
+                  <h4 class="gallery-title">Residential Villa New</h4>
                   <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
                 </div>
               </div>
             </div>
 
+            <!-- Item: Geetha Home -->
+            <div class="gallery-item" data-category="residential">
+              <div class="gallery-card" data-project="geetha-home" data-lightbox="assets/images/neha/githa 1.jpg"
+                data-caption="Geetha Home">
+                <img src="assets/images/neha/githa 1.jpg" alt="Geetha Home" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-badge">RESIDENTIAL INTERIORS</span>
+                  <h4 class="gallery-title">Geetha Home</h4>
+                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
 
+            <!-- Item: Sashi Residence -->
+            <div class="gallery-item" data-category="residential">
+              <div class="gallery-card" data-project="sashi-residence" data-lightbox="assets/images/neha/sashi.jpg"
+                data-caption="Sashi Residence">
+                <img src="assets/images/neha/sashi.jpg" alt="Sashi Residence" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-badge">RESIDENTIAL</span>
+                  <h4 class="gallery-title">Sashi Residence</h4>
+                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item: Suma Residence -->
+            <div class="gallery-item" data-category="residential">
+              <div class="gallery-card" data-project="suma-residence" data-lightbox="assets/images/neha/suma.jpg"
+                data-caption="Suma Residence">
+                <img src="assets/images/neha/suma.jpg" alt="Suma Residence" loading="lazy" class="img-pos-top">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-badge">RESIDENTIAL TOWER</span>
+                  <h4 class="gallery-title">Suma Residence</h4>
+                  <span class="zoom-btn"><i class="fa-solid fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
 
           </div>
 
@@ -1076,7 +1110,7 @@
                   <span class="brand-sub">ELECTRICALS</span>
                 </div>
               </div>
-              <p class="footer-desc">Powering spaces.<br>Enhancing lives.<br>Since 2000.</p>
+              <p class="footer-desc">Powering spaces.<br>Enhancing lives.<br>Since 1997.</p>
             </div>
 
             <div class="footer-links-col">
